@@ -5,5 +5,6 @@
 	"sslcrtd_exe_path":"/usr/lib/squid/ssl_crtd",
 	"squid_daemon_name":"squid",
 	"sslcrtd_dir_path":"/var/spool/squid_ssldb",
-	"openssl_exe_path":"/usr/bin/openssl"
+	"openssl_exe_path":"/usr/bin/openssl",
+	"use_peek_n_splice" : true
 }
