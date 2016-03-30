@@ -6,8 +6,11 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+# stop in case of any error
+set -e
+
 # install required python libs
-apt-get -y install python-setuptools python-ldap 
+apt-get -y install python-ldap python-pip
 
 # install django
 pip install django==1.6.11
