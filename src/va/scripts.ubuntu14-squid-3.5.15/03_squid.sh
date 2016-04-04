@@ -13,7 +13,8 @@ echo "deb http://ubuntu.diladele.com/ubuntu/ trusty main" > /etc/apt/sources.lis
 apt-get update
 
 # install libecap tools
-apt-get install libecap3
-apt-get install squid-common
-apt-get install squid 
-apt-get install squidclient 
+apt-get install --allow-unauthenticated -y libecap3
+apt-get install --allow-unauthenticated -y squid-common
+apt-get install --allow-unauthenticated -y squid 
+apt-get install --allow-unauthenticated -y squidclient 
+apt-get install -y mc
