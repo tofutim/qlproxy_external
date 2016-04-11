@@ -9,8 +9,8 @@ if [ $ARCH1 == 'i386' ]; then
     ARCH2='x86'
 fi
 
-DDWS_VERSION=4.4.0
-DDWS_BUILD=302B
+DDWS_VERSION=4.5.0
+DDWS_BUILD=50FA
 
 # see if qlproxy group exists
 echo "Searching for group qlproxy..."

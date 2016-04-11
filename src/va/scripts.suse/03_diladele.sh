@@ -7,10 +7,10 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # get qlproxy
-wget http://packages.diladele.com/qlproxy/4.4.0.302B/amd64/release/suse13/qlproxy-4.4.0-302B.x86_64.rpm
+wget http://packages.diladele.com/qlproxy/4.5.0.50FA/amd64/release/suse13/qlproxy-4.5.0-50FA.x86_64.rpm
 
 # install it
-rpm -i qlproxy-4.4.0-302B.x86_64.rpm
+rpm -i qlproxy-4.5.0-50FA.x86_64.rpm
 
 # restart apache
 systemctl restart apache2
