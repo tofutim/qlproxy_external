@@ -20,6 +20,3 @@ pip install reportlab==3.3.0
 
 # install apache and mod_wsgi
 apt-get -y install apache2 libapache2-mod-wsgi
-
-# sometimes the check-new-release process on Ubuntu eats all CPU, so we switch it to manual
-sed -i "s/Prompt=lts/Prompt=never/g" /etc/update-manager/release-upgrades
