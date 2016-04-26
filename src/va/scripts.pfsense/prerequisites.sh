@@ -1,7 +1,19 @@
-#!/bin/csh
+#!/bin/tcsh
 
-# install prerequisites
-pkg install -y python py27-sqlite3 py27-ldap py27-django16 apache24 ap24-mod_wsgi4 openldap-client
+# in pfsense 2.3 a lot of packages were removed from default repository
+setenv REPOURL http://pkg.freebsd.org/freebsd:10:x86:64/release_3/All
+
+# install apache 24
+pkg add $REPOURL/gdbm-1.11_2.txz
+pkg add $REPOURL/db5-5.3.28_3.txz
+pkg add $REPOURL/apr-1.5.2.1.5.4.txz
+pkg add $REPOURL/apache24-2.4.18.txz
+pkg add $REPOURL/ap24-mod_wsgi4-4.4.21.txz
+
+# install django and sqlite modules for python
+pkg add $REPOURL/py27-setuptools27-19.2.txz
+pkg add $REPOURL/py27-sqlite3-2.7.11_7.txz
+pkg add $REPOURL/py27-django16-1.6.11.txz
 
 # in order to correctly start up apache at boot time init script needs to be renamed
 cp /usr/local/etc/rc.d/apache24 /usr/local/etc/rc.d/apache24.sh
