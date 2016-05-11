@@ -11,6 +11,9 @@ if [ -f /etc/centos-release ] || [ -f /etc/redhat-release ]; then
 	# centos, redhat
 	yum install -y mariadb-server mariadb patch MySQL-python
 
+	# copy the optimized mysql settings
+	cp -f server.cnf /etc/my.cnf.d/websafety.cnf
+
 	# enable and start it
 	systemctl enable mariadb.service
 	systemctl start mariadb.service
@@ -21,4 +24,7 @@ else
 
 	# install it
 	apt-get -y install mysql-server python-mysqldb
+
+	# copy the optimized mysql settings
+	cp -f server.cnf /etc/mysql.conf.d/websafety.cnf
 fi
