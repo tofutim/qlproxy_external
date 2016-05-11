@@ -12,7 +12,7 @@ if [ -f /etc/centos-release ] || [ -f /etc/redhat-release ]; then
 	yum install -y mariadb-server mariadb patch MySQL-python
 
 	# copy the optimized mysql settings
-	cp -f server.cnf /etc/my.cnf.d/websafety.cnf
+	yes | cp -f websafety.cnf /etc/my.cnf.d/websafety.cnf
 
 	# enable and start it
 	systemctl enable mariadb.service
@@ -25,6 +25,19 @@ else
 	# install it
 	apt-get -y install mysql-server python-mysqldb
 
+	# stop mysql
+	service mysql stop
+
 	# copy the optimized mysql settings
-	cp -f server.cnf /etc/mysql.conf.d/websafety.cnf
+	yes | cp -f websafety.cnf /etc/mysql/conf.d/websafety.cnf
+
+	# remove log files
+	rm -f /var/lib/mysql/ib_logfile0
+	rm -f /var/lib/mysql/ib_logfile1
+
+	# and start again (mysql will recreate the log files this will take some time)
+	service mysql start
+
+	# now to get nice looking and clean error log
+	service mysql stop && rm -f /var/log/mysql/error.log && service mysql start
 fi
