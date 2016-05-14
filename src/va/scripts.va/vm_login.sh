@@ -8,7 +8,7 @@ cat > /etc/issue <<EOFTEXT
 Welcome to Diladele Web Safety for Squid Proxy Web Filtering Appliance!
 
 Operating System    Ubuntu Server Linux 14.04
-Appliance Version   4.4.0
+Appliance Version   4.5.0
 Squid Version       3.3.8
                     
 Allocated RAM       $RAMNFO
