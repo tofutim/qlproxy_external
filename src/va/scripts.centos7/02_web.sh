@@ -7,15 +7,16 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # install ntp server (we need to have the date time syncronized as SSL bump relies on correct system time)
-yum -y install ntp
-systemctl enable ntpd
-systemctl start ntpd
+yum -y install ntp && systemctl enable ntpd && systemctl start ntpd
 
-# install python libs
-yum -y install python-setuptools python-ldap net-tools
+# install python libs and compiler (needed for reportlab)
+yum -y install \
+	python-devel python-pip python-ldap \
+	net-tools libjpeg-devel zlib-devel gcc-c++
 
 # install python django for web ui
-easy_install django==1.6.11
+pip install django==1.6.11
+pip install reportlab==3.3.0
 
 # install apache web server to run web ui
 yum -y install httpd mod_wsgi

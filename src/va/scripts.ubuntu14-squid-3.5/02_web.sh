@@ -6,11 +6,20 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+# stop in case of any error
+set -e
+
 # install required python libs
-apt-get -y install python-setuptools python-ldap
+apt-get -y install python-ldap python-pip
 
 # install django
-easy_install django==1.6.11
+pip install django==1.6.11
+
+# to have PDF reports we need to install reportlab with a lot of dependencies
+apt-get -y install python-dev libjpeg-dev zlib1g-dev
+
+# now install reportlab
+pip install reportlab==3.3.0
 
 # install apache and mod_wsgi
 apt-get -y install apache2 libapache2-mod-wsgi

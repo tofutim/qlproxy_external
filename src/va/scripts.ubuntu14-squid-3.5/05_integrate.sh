@@ -30,7 +30,7 @@ fi
 chown -R proxy:proxy $SSL_DB
 
 # the installer of qlproxy does not know about squid 3.5 - tell it
-cp -f settings.ubuntu14.json /opt/qlproxy/etc/settings.ubuntu14.json
+cp -f system.json /opt/qlproxy/etc/system.json
 
 # reset owner of installation path
 chown -R qlproxy:qlproxy /opt/qlproxy

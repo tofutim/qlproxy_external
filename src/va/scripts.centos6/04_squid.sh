@@ -13,12 +13,12 @@ yum -y install epel-release && yum -y update
 yum -y install perl-Crypt-OpenSSL-X509
 
 # get latest squid
-curl -O http://www1.ngtech.co.il/repo/centos/6/x86_64/squid-3.5.16-1.el6.x86_64.rpm
-curl -O http://www1.ngtech.co.il/repo/centos/6/x86_64/squid-helpers-3.5.16-1.el6.x86_64.rpm
+curl -O http://www1.ngtech.co.il/repo/centos/6/x86_64/squid-3.5.19-1.el6.x86_64.rpm
+curl -O http://www1.ngtech.co.il/repo/centos/6/x86_64/squid-helpers-3.5.19-1.el6.x86_64.rpm
 
 # and install it
-yum -y --nogpgcheck localinstall squid-3.5.16-1.el6.x86_64.rpm
-yum -y --nogpgcheck localinstall squid-helpers-3.5.16-1.el6.x86_64.rpm
+yum -y --nogpgcheck localinstall squid-3.5.19-1.el6.x86_64.rpm
+yum -y --nogpgcheck localinstall squid-helpers-3.5.19-1.el6.x86_64.rpm
 
 # make squid autostart after reboot
 chkconfig squid on
