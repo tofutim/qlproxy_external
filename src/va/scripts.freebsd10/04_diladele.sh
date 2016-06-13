@@ -9,8 +9,8 @@ if [ $ARCH1 == 'i386' ]; then
     ARCH2='x86'
 fi
 
-DDWS_VERSION=4.5.0
-DDWS_BUILD=7470
+DDWS_VERSION=4.6.0
+DDWS_BUILD=8583
 
 # get latest version of web safety
 fetch http://packages.diladele.com/qlproxy/$DDWS_VERSION.$DDWS_BUILD/$ARCH1/release/freebsd10/qlproxy-$DDWS_VERSION-$ARCH2.txz

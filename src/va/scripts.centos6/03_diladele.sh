@@ -7,8 +7,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="4.5.0"
-MINOR="7470"
+MAJOR="4.6.0"
+MINOR="8583"
 
 # get latest qlproxy
 curl -O http://packages.diladele.com/qlproxy/$MAJOR.$MINOR/amd64/release/centos6/qlproxy-${MAJOR}-${MINOR}.x86_64.rpm
