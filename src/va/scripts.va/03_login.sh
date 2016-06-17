@@ -38,5 +38,16 @@ EOFTEXT
 # make it executable
 chmod +x /etc/network/if-up.d/vm_login_update
 
-# and disable the user
+# install vm tools (only if vmware is detected)
+dmesg | grep -i "hypervisor detected: vmware" > /dev/null
+if [ $? -eq 0 ]; then
+    echo "Detected VMware, installing open-vm-tools..."
+    apt-get update > /dev/null
+    apt-get install -y open-vm-tools
+fi
+
+# disable the user
 passwd user -l
+
+# exit successfully
+echo "VA generated successfully, please reboot"
