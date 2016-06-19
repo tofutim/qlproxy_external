@@ -23,7 +23,7 @@ endif
 # how to check user qlproxy is in qlproxy group???
 
 # get latest version of diladele icap server
-fetch http://packages.diladele.com/qlproxy/4.6.0.34C7/amd64/release/freebsd10/qlproxy-4.6.0-amd64.txz
+fetch http://packages.diladele.com/qlproxy/4.6.0.0A1B/amd64/release/freebsd10/qlproxy-4.6.0-amd64.txz
 
 # and install it
 pkg install -y qlproxy-4.6.0-amd64.txz
