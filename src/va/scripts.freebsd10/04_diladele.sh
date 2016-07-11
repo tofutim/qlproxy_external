@@ -10,7 +10,7 @@ if [ $ARCH1 == 'i386' ]; then
 fi
 
 DDWS_VERSION=4.6.0
-DDWS_BUILD=EB2F
+DDWS_BUILD=EC43
 
 # get latest version of web safety
 fetch http://packages.diladele.com/qlproxy/$DDWS_VERSION.$DDWS_BUILD/$ARCH1/release/freebsd10/qlproxy-$DDWS_VERSION-$ARCH2.txz
