@@ -29,9 +29,6 @@ if [ $? -ne 0 ]; then
 fi
 chown -R proxy:proxy $SSL_DB
 
-# the installer of qlproxy does not know about squid 3.5 - tell it
-cp -f system.json /opt/qlproxy/etc/system.json
-
 # reset owner of installation path
 chown -R qlproxy:qlproxy /opt/qlproxy
 
