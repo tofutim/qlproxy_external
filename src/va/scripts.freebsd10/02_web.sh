@@ -10,7 +10,7 @@ env ASSUME_ALWAYS_YES=YES pkg install -y apache24 ap24-mod_wsgi4
 env ASSUME_ALWAYS_YES=YES pkg install -y openldap-client sudo ca_root_nss
 
 # autostart apache
-grep -e '^\s*apache24_enable\s*=\s*\"YES\"\s*$' /etc/rc.conf
+grep -e '^\s*apache24_enable\s*=\s*\"YES\"\s*$' /etc/rc.conf.local
 if ( $? != 0 ) then
-	echo 'apache24_enable="YES"' >> /etc/rc.conf
+	echo 'apache24_enable="YES"' >> /etc/rc.conf.local
 endif
